@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-content>
+      <form [formGroup]="myForm" (submit)="onSubmit()">
+        <label>Title</label>&nbsp;
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="title">
+          <mat-error *ngIf="myForm?.get('title')?.hasError('required')">title harus diisi</mat-error>
+        </mat-form-field>
+        <br>
+
+        <label>Body</label>&nbsp;
+        <mat-form-field>
+          <mat-label>Body</mat-label>
+          <input matInput formControlName="body">
+          <mat-error *ngIf="myForm?.get('body')?.hasError('required')">body harus diisi</mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit">Submit</button> &nbsp;
+        <button mat-raised-button color="primary" routerLink="/crud" type="submit">Back</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

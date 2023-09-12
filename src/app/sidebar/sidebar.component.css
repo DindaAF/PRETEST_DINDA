@@ -1,0 +1,8 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.custom-sidenav-container {
+    width: 300px; /* Sesuaikan lebar yang Anda inginkan */
+  }
+
+.list{
+    margin-top: 50px;
+}

@@ -1,0 +1,35 @@
+<div>
+    &nbsp;<button mat-raised-button color="primary" routerLink="/crud/create" style="margin-top: 50px;">Add Post</button>
+    <mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.title }}</mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="body">
+          <mat-header-cell *matHeaderCellDef>Body</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{ row.body }}</mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <button mat-icon-button [routerLink]="['/edit', row.id]">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="deletion(row.title)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button mat-icon-button [routerLink]="['/show', row.id]">
+                <mat-icon>visibility</mat-icon>
+              </button>
+            </mat-cell>
+          </ng-container>
+      
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+  

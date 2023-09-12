@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened class="custom-sidenav-container">
+      <!-- Sidebar content goes here -->
+      <mat-nav-list class="list">
+        <a mat-list-item routerLink="/" class="text-content">Home</a>
+        <a mat-list-item routerLink="/crud" class="text-content">Form</a>
+        <!-- Add more sidebar links as needed -->
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- Main content goes here -->
+      <app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
